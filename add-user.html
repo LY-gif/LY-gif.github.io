@@ -16,7 +16,8 @@
   <!-- Script: Animated entrance -->
   <script src="js/animate-in.js"></script>
   <link rel="stylesheet" href="aquamarine.css">
-  <script language="javascript"> // 这个脚本是 ie6和ie7 通用的脚本
+  <script language="javascript">
+    // 这个脚本是 ie6和ie7 通用的脚本
     function custom_close(){
         if(confirm("您确定要关闭本页吗？")){
             window.opener=null;
@@ -35,23 +36,27 @@
   <div class="align-items-center d-flex cover section-aquamarine py-5" style="background-image: linear-gradient(to left bottom, rgba(189, 195, 199, .75), rgba(44, 62, 80, .75)); background-size: 100%;">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 align-self-center text-lg-left text-center">
-          <h1 class="mb-0 mt-5 display-4">LoongwrtS</h1>
-          <p class="mb-5">By liyue</p>
-        </div>
-        <div class="col-lg-5 p-3">
+        <div class="col-lg-12 p-3">
           <form class="p-4 bg-light" method="post" action="https://formspree.io/">
-            <h4 class="mb-4 text-center">Login</h4>
-            <div class="form-group"> <label>Account</label>
+            <h1 class="text-center">添加用户</h1>
+            <div class="form-group"> <label>user name</label>
               <input class="form-control" placeholder="name" required="required"> </div>
+            <div class="form-group"><label>MAC Address</label><input type="text" class="form-control" id="inlineFormInput" placeholder="48位MAC地址" required="required"></div>
             <div class="form-group"> <label>Password<br></label>
               <input type="password" class="form-control" style="" placeholder="6-16 number" required="required"> </div>
-            <a href="devices.html" class="btn mt-4 btn-block p-2 btn-primary">Sign In</a>
+            <a href="user-list.html" class="btn mt-4 btn-block p-2 btn-primary">Add</a>
           </form>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 d-flex justify-content-end"><a class="btn btn-primary" onclick="custom_close()">Quit</a></div>
+        <div class="col-md-12 d-flex justify-content-end">
+          <div class="btn-group dropup">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 选项 </button>
+            <div class="dropdown-menu"> <a class="dropdown-item" href="devices.html">首页</a>
+              <a type="button" onclick="custom_close()">退出</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

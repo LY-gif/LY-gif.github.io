@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="aquamarine.css">
   <link rel="stylesheet" href="aquamarine.css">
+  <script language="javascript">
+    // 这个脚本是 ie6和ie7 通用的脚本
+    function custom_close(){
+        if(confirm("您确定要关闭本页吗？")){
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        }
+        else{
+        }
+    }
+    </script>
 </head>
 
 <body class="">
@@ -20,7 +32,7 @@
           <div class="btn-group">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 选项 </button>
             <div class="dropdown-menu"> <a class="dropdown-item" href="index.html">切换账户</a>
-              <a class="dropdown-item" href="#">退出</a>
+              <a class="dropdown-item" onclick="custom_close()">退出</a>
             </div>
           </div>
         </div>
@@ -70,8 +82,11 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row p-1">
         <div class="col-md-12"><a class="btn btn-primary d-flex justify-content-center flex-column" href="add-device.html">添加设备</a></div>
+      </div>
+      <div class="row p-1">
+        <div class="col-md-12"><a class="btn btn-primary d-flex justify-content-center flex-column" href="add-user.html">添加用户</a></div>
       </div>
     </div>
   </div>

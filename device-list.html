@@ -16,6 +16,18 @@
   <!-- Script: Animated entrance -->
   <script src="js/animate-in.js"></script>
   <link rel="stylesheet" href="aquamarine.css">
+  <script language="javascript">
+    // 这个脚本是 ie6和ie7 通用的脚本
+    function custom_close(){
+        if(confirm("您确定要关闭本页吗？")){
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        }
+        else{
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -31,7 +43,7 @@
           <div class="btn-group">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 选项 </button>
             <div class="dropdown-menu"> <a class="dropdown-item" href="devices.html">返回上一级</a>
-              <a class="dropdown-item" href="#">退出</a>
+              <a class="dropdown-item" onclick="custom_close()">退出</a>
             </div>
           </div>
         </div>
