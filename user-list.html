@@ -18,16 +18,13 @@
   <link rel="stylesheet" href="aquamarine.css">
   <script language="javascript">
     // 这个脚本是 ie6和ie7 通用的脚本
-    function custom_close(){
-        if(confirm("您确定要关闭本页吗？")){
-            window.opener=null;
-            window.open('','_self');
-            window.close();
-        }
-        else{
-        }
+    function custom_close() {
+      if (confirm("您确定要关闭本页吗？")) {
+        window.opener = null
+        window.open('about:blank', '_top').close()
+      } else {}
     }
-    </script>
+  </script>
 </head>
 
 <body>
@@ -56,9 +53,10 @@
                 <tr>
                   <th scope="col"></th>
                   <th scope="col">用户名称</th>
-                  <th scope="col">添加时间</th>
-                  <th>MAC</th>
+                  <th scope="col">MAC</th>
+                  <th>上一次登录时间</th>
                   <th>可访问等级</th>
+                  <th class="d-flex justify-content-center">编辑/删除</th>
                 </tr>
               </thead>
               <tbody>
@@ -66,25 +64,35 @@
                   <th scope="row">1</th>
                   <td>root</td>
                   <td>94:87:e0:1a:e8:83</td>
+                  <td>2021-5-20-20:23</td>
                   <td>3</td>
-                  <td>3</td>
+                  <td class="d-flex justify-content-center"><br>
+                    <div class="btn-group"> <a href="edit-user.html" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td>user1</td>
                   <td>f4:83:cd:f8:97:e7</td>
+                  <td>2021-5-12-17:45</td>
                   <td>2</td>
-                  <td>2</td>
+                  <td class="d-flex justify-content-center">
+                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
                   <td>user2</td>
                   <td>54:0d:f9:89:17:76</td>
+                  <td>2021-5-16-22:10</td>
                   <td>1</td>
-                  <td>1</td>
+                  <td class="d-flex justify-content-center"><br>
+                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                  </td>
                 </tr>
                 <tr>
                   <td>4</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -96,9 +104,11 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>6</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -110,9 +120,11 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>8</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -124,6 +136,7 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td contenteditable="true"></td>
                 </tr>
               </tbody>
             </table>
@@ -146,6 +159,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!-- Script: Smooth scrolling between anchors in the same page -->
   <script src="js/smooth-scroll.js" style=""></script>
-  </body>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
 
 </html>

@@ -18,16 +18,13 @@
   <link rel="stylesheet" href="aquamarine.css">
   <script language="javascript">
     // 这个脚本是 ie6和ie7 通用的脚本
-    function custom_close(){
-        if(confirm("您确定要关闭本页吗？")){
-            window.opener=null;
-            window.open('','_self');
-            window.close();
-        }
-        else{
-        }
+    function custom_close() {
+      if (confirm("您确定要关闭本页吗？")) {
+        window.opener = null
+        window.open('about:blank', '_top').close()
+      } else {}
     }
-    </script>
+  </script>
 </head>
 
 <body>
@@ -59,6 +56,7 @@
                   <th scope="col">添加时间</th>
                   <th>隐私等级</th>
                   <th>可访问者</th>
+                  <th class="d-flex justify-content-center">编辑/删除</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,6 +66,9 @@
                   <td>2021-5-21-20:45</td>
                   <td>3</td>
                   <td>root</td>
+                  <td class="d-flex justify-content-center">
+                    <div class="btn-group"> <a href="edit-device.html" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
@@ -75,6 +76,9 @@
                   <td>2021-5-23-15:36</td>
                   <td>2</td>
                   <td>root、owner</td>
+                  <td class="d-flex justify-content-center">
+                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
@@ -82,9 +86,13 @@
                   <td>2021-5-25-18:56</td>
                   <td>1</td>
                   <td>all user</td>
+                  <td class="d-flex justify-content-center">
+                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                  </td>
                 </tr>
                 <tr>
                   <td>4</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -96,9 +104,11 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>6</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -110,6 +120,7 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>8</td>
@@ -117,9 +128,11 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>9</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -146,6 +159,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!-- Script: Smooth scrolling between anchors in the same page -->
   <script src="js/smooth-scroll.js" style=""></script>
-  </body>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
 
 </html>
