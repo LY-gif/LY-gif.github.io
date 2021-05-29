@@ -26,6 +26,26 @@
         }
     }
     </script>
+    <script>
+    function judgment(){
+      //一：原生js获取文本框的值：
+      var user=document.getElementById("account");//input的id
+      var passwd=document.getElementById("password");//input的id
+      if(user.value=="admin"&&passwd.value=="admin"){
+        //跳转页面
+        //方法1
+        window.location.href="devices.html";
+        // //方法2
+        // window.navigate("new.html");
+        // //方法3，返回上一页面
+        // window.history.back(-1);
+        // //方法4
+        // self.location='new.html';
+        // //方法5
+        // top.location='new.html';
+}else{}
+    }
+    </script>
 </head>
 
 <body>
@@ -42,10 +62,10 @@
           <form class="p-4 bg-light" method="post" action="https://formspree.io/">
             <h4 class="mb-4 text-center">Login</h4>
             <div class="form-group"> <label>Account</label>
-              <input class="form-control" placeholder="name" required="required"> </div>
+              <input id="account" class="form-control" placeholder="name" required="required"> </div>
             <div class="form-group"> <label>Password<br></label>
-              <input type="password" class="form-control" style="" placeholder="6-16 number" required="required"> </div>
-            <a href="devices.html" class="btn mt-4 btn-block p-2 btn-primary">Sign In</a>
+              <input id="password" type="password" class="form-control" style="" placeholder="6-16 number" required="required"> </div>
+            <a onclick="judgment()" class="btn mt-4 btn-block p-2 btn-primary">Sign In</a>
           </form>
         </div>
       </div>
