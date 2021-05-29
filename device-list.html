@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta device="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
   <title>LoongwrtS</title>
-  <meta name="description" content="Free Bootstrap 4 Pingendo Aquamarine template for restaurant and food">
-  <meta name="keywords" content="Pingendo restaurant food aquamarine free template bootstrap 4">
+  <meta device="description" content="Free Bootstrap 4 Pingendo Aquamarine template for restaurant and food">
+  <meta device="keywords" content="Pingendo restaurant food aquamarine free template bootstrap 4">
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <!-- Script: Make my navbar transparent when the document is scrolled to top -->
@@ -25,6 +25,63 @@
       } else {}
     }
   </script>
+
+<script>
+  //按钮点击事件
+  function ViewData() {
+      let tableHtml = $(document).find('table.border_distance tbody tr.device1');
+      let data = getTableData(tableHtml);
+
+//      alert('表格的内容为：' + JSON.stringify(data) );
+      window.location.href="edit-device.html";
+      //实际中把处理好的数据传到后台处理，如下：
+      /*
+      field.id = 1;
+      field.users = data;
+      $.ajax({
+          url: '/index/.../...',
+          type: 'POST',
+          data: field,
+          success: function(res) {
+              //相关操作
+          },
+          error: function(res) {
+              //异常提示
+          }
+      });
+       */
+  };
+
+  /**
+   * 获取表格数据
+   * @param tableHtml 表格Html
+   * @returns {Array}
+   */
+  function getTableData(tableHtml) {
+      let result = [];
+      if (tableHtml) {
+          let length = tableHtml.length;
+          for(let i = 0; i < length; i++) {   //追加数据
+              let trData = {}; // 每行的数据
+
+              //注意text()和val()的区别
+              let device = $(tableHtml).eq(i).find('.device').text();
+              let level = $(tableHtml).eq(i).find('.level').text();
+
+              //如果不存在给默认值（视情况而定）
+              device = (device == undefined) ? '' : device;
+              level = (level == undefined) ? '' : level;
+
+              //数据赋值
+              trData.device = device;
+              trData.level = level;
+
+              result.push(trData);    //数据追加
+          }
+      }
+      return result;
+  }
+</script>
 </head>
 
 <body>
@@ -48,7 +105,7 @@
       <div class="row">
         <div class="col-md-12 bg-light">
           <div class="table-responsive">
-            <table class="table table-striped table-borderless">
+            <table class="table table-striped table-borderless border_distance">
               <thead>
                 <tr>
                   <th scope="col"></th>
@@ -60,34 +117,34 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="device1">
                   <th scope="row">1</th>
-                  <td>门锁</td>
+                  <td class="device">门锁</td>
                   <td>2021-5-21-20:45</td>
-                  <td>3</td>
+                  <td class="level">3</td>
                   <td>root</td>
                   <td class="d-flex justify-content-center">
-                    <div class="btn-group"> <a href="edit-device.html" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                    <div class="btn-group"> <a class="btn btn-outline-primary text-primary" onclick="ViewData()">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>智能电视</td>
+                  <td class="device">智能电视</td>
                   <td>2021-5-23-15:36</td>
-                  <td>2</td>
+                  <td class="level">2</td>
                   <td>root、owner</td>
                   <td class="d-flex justify-content-center">
-                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary" onclick="ViewData()">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>蓝牙音响</td>
+                  <td class="device">蓝牙音响</td>
                   <td>2021-5-25-18:56</td>
-                  <td>1</td>
+                  <td class="level">1</td>
                   <td>all user</td>
                   <td class="d-flex justify-content-center">
-                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
+                    <div class="btn-group"> <a href="#" class="btn btn-outline-primary" onclick="ViewData()">编辑</a> <a href="#" class="btn btn-primary">删除</a> </div>
                   </td>
                 </tr>
                 <tr>
